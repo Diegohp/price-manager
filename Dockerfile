@@ -25,7 +25,7 @@ COPY src ./src
 
 RUN mvn clean package -DskipTests
 
-COPY target/price-manager-1.0.0.jar app.jar
+RUN cp target/*.jar app.jar
 
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
